@@ -3,8 +3,9 @@ CREATE TABLE `user` (
   fname varchar(30) DEFAULT NULL, 
   lname varchar(30) DEFAULT NULL,
   username varchar(20) NOT NULL,
-  passwordhash varchar(32) NOT NULL,
   email varchar(50) DEFAULT NULL,
+  passwordhash varchar(32) NOT NULL,
+  schoolname varchar(50) DEFAULT NULL,
   address varchar(50) DEFAULT NULL,
   createdBy DATETIME NOT NULL,
   PRIMARY KEY (id)
@@ -17,6 +18,7 @@ CREATE TABLE inventory (
   author varchar(60) NOT NULL,
   isbn bigint NOT NULL,
   price float NOT NULL DEFAULT '0',
+  sold bool DEFAULT FALSE,
   createdBy DATETIME NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (sellerid) REFERENCES `user`(id)

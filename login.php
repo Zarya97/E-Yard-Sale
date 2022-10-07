@@ -1,7 +1,7 @@
 <?php
 
 $is_invalid = false;
-
+// This page is for existing users to log in with their email and password
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $mysqli = require __DIR__ . "/yardsaledb.php";
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $mysqli->query($sql);
     
     $user = $result->fetch_assoc();
-    
+    // Check if the password matches with the stored password in the database.
     if ($user) {
         
         if (password_verify($_POST["password"], $user["passwordhash"])) {

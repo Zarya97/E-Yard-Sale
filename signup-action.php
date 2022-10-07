@@ -1,4 +1,7 @@
 <?php
+// This is a server-side validation to check if the input
+// meets the database requirements
+
 if (empty($_POST["name"])) {
     die("Name is required");
 }
@@ -27,10 +30,12 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
     die("Passwords must match");
 }
 
+// Hash the password for security
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/yardsaledb.php";
 
+// Insert the user innput into the database
 $sql = "INSERT INTO user (username, email, passwordhash, schoolname)
         VALUES (?, ?, ?, ?)";
 
@@ -47,12 +52,15 @@ $stmt->bind_param("ssss",
                   $_POST["schoolname"]);
 
 
+// Check if the signup is successful
 if ($stmt->execute()) {
 
     header("Location: successful-signup.html");
     exit;
 }
 
+// If sign up not successful a message will be displayed
+// that the email already exists in the database
 else {
 
     if ($mysqli->errno === 1062) {

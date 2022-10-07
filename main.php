@@ -1,7 +1,12 @@
 <?php
+// This is the main page.
+// Users will be directed to this page when they first enter the webpage
+// and after they logout. They have the option to either sign up or login
+// by clicking on the specific button.
 
+// If the user logs in, the page will redirect the user to this page with options buy and sell
+// as the user is a valid user
 session_start();
-
 if (isset($_SESSION["user_id"])) {
     
     $mysqli = require __DIR__ . "/yardsaledb.php";

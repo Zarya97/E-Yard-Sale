@@ -1,3 +1,5 @@
+// This is a JavaScript file to valitade the sign-up form
+
 const validation = new JustValidate("#signup");
 
 validation

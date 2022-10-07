@@ -1,0 +1,24 @@
+.top {
+    width: 1920px;
+}
+h1 {
+    margin: 0;
+}
+.button {
+    margin-top: 1px;
+    height: 45px;
+    width: 150px;
+    float: right;
+}
+.buy, .sell {
+    height: 50px;
+    width: 200px;
+}
+
+#container {
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}

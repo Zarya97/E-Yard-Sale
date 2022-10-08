@@ -51,4 +51,5 @@ createdBy DATETIME NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (buyerId) REFERENCES `user`(id),
 FOREIGN KEY (cartId) REFERENCES cart (id)
+
 );

@@ -21,14 +21,10 @@ validation
             rule: "email"
         },
         {
-            validator: (value) => () => {
-                return fetch("email-validation.php?email=" + encodeURIComponent(value))
-                       .then(function(response) {
-                           return response.json();
-                       })
-                       .then(function(json) {
-                           return json.available;
-                       });
+            validator: (value) => async () => {
+                const response = await fetch("email-validation.php?email=" + encodeURIComponent(value));
+                const json = await response.json();
+                return json.available;
             },
             errorMessage: "email already taken"
         }

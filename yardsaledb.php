@@ -4,7 +4,7 @@
 $host = "localhost";
 $dbname = "yardsale";
 $username = "root";
-$password = "";
+$password = "Nashville2022@";
 
 // make a new object to connect the database
 $mysqli = new mysqli($host, $username, $password, $dbname);

@@ -47,7 +47,7 @@ if (isset($_SESSION["user_id"])) {
         </body>
         <div id = "container">
             <button onclick= "window.location.href='';" style="background-color:green;" class = "buy">Buy</button>
-            <button onclick= "window.location.href='';" style="background-color:red;" class = "sell">Sell</button>
+            <button onclick= "window.location.href='sell.html';" style="background-color:red;" class = "sell">Sell</button>
         </div>
 
 

@@ -43,7 +43,7 @@ if (isset($_SESSION["user_id"])) {
         <h3>Hello <?= htmlspecialchars($user["username"] ?? '') ?> ! </h3>
         
         <body>
-            <button onclick="window.location.href='logout.php';" style="background-color: dodgerblue;" class = "button">Log out</button>
+            <button onclick="window.location.href='logout.php';" style="background-color: dodgerblue;" id = "button">Log out</button>
         </body>
         <div id = "container">
             <button onclick= "window.location.href='';" style="background-color:green;" class = "buy">Buy</button>

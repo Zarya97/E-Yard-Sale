@@ -4,6 +4,9 @@
     <title>SELL</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="/sell.js" defer></script>
     <style type="text/css">
         body {
             background-image: url('Back.jpg');
@@ -14,7 +17,10 @@
 <body>
     <h1>SELL</h1>
     
-    <form action="signup-action.php" method="post" id="signup">
+    <form action="sell.php" method="post" id="sell">
+        <body>
+            <button onclick="window.location.href='main.php';" style="background-color: dodgerblue;" id = "button">Home</button>
+        </body>
         <div>
             <label for="title">Title</label>
             <input type="text" id="title" name="title">

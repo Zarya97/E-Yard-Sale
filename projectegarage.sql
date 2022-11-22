@@ -8,6 +8,7 @@ CREATE TABLE `user` (
   schoolName varchar(50) DEFAULT NULL,
   address varchar(50) DEFAULT NULL,
   createdBy DATETIME NOT NULL,
+  balance FLOAT NULL DEFAULT 100,
   PRIMARY KEY (id)
 );
 

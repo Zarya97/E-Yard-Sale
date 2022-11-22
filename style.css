@@ -13,9 +13,15 @@ h1 {
     width: 150px;
     float: right;
 }
-.buy, .sell {
+.buy {
     height: 50px;
     width: 200px;
+}
+
+.sell {
+    height: 50px;
+    width: 200px;
+
 }
 
 #container {
@@ -33,7 +39,7 @@ h1 {
     font-family: tahoma;
     margin-top: 30px;
     margin-right: 25px;
-    position:absolute;
+    position:fixed;
     top:0;
     right:0;
 }
@@ -56,11 +62,12 @@ th {
   }
     
 #saleSign {
+    width: 300px;
     text-align: center;
     font-weight: 400;
-    position: fixed;
-    bottom: 70px;
-    left: 50px;
+    position: relative;
+    top: 150px;
+    right: 300px;
   }
     
 #saleSign {
@@ -114,3 +121,97 @@ th {
     margin-top: 200px;
     
 }
+table {
+    width: 1400px;
+}
+#table {
+    background-image: url('Back.jpg');
+    background-size:cover;
+    max-width: max-content;
+}
+
+.editbutton {
+    display: block;
+    border: 1px solid green;
+    padding-top: 4px;
+    width: 100px;
+    height: 18px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 12px;
+}
+a.editbutton:hover {
+    text-decoration: none;
+    background-color: green;
+}
+
+.deletebutton {
+    display: block;
+    border: 1px solid red;
+    padding-top: 4px;
+    width: 100px;
+    height: 18px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 12px;
+}
+a.deletebutton:hover {
+    text-decoration: none;
+    background-color: red;
+}
+
+.buybutton {
+    display: block;
+    border: 1px solid blue;
+    padding-top: 4px;
+    width: 100px;
+    height: 18px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 12px;
+}
+a.buybutton:hover {
+    text-decoration: none;
+    background-color: #5e17eb;
+}
+
+#totalbalance {
+    width: 400px;
+    border: 2px solid darkred;
+    border-radius: 10px;
+    background-color: gold;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    margin: 300px;
+    margin-left: 250px;
+  }
+
+  #saleSign2 {
+    text-align: center;
+    font-weight: 400;
+    position: absolute;
+    top: 80px;
+    left: 613px;
+  }
+    
+#saleSign2 {
+    font-size: 6.2rem;
+    animation: pulsate 1.5s infinite alternate;  
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #5e17eb,
+              0 0 0.8rem #5e17eb,
+              0 0 2.8rem #5e17eb,
+              inset 0 0 1.3rem #5e17eb; 
+  }

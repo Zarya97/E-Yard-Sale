@@ -18,8 +18,18 @@ if (isset($_SESSION["user_id"])) {
     
     $user = $result->fetch_assoc();
 }
+else {
+    header("Location: login.php");
+    exit;
+}
+    $id = $_SESSION["user_id"];
+    $stmt = "SELECT balance FROM user WHERE id = $id";
+    $balance = $mysqli->query($stmt);
+    $tbalance = $balance->fetch_array()[0] ?? '';
+    
+    ?>
 
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +58,13 @@ if (isset($_SESSION["user_id"])) {
         <div id = "container">
             <button onclick= "window.location.href='buy.html';" style="background-color:green;" class = "buy">Buy</button>
             <button onclick= "window.location.href='sell.html';" style="background-color:red;" class = "sell">Sell</button>
+        </div>
+        <div id = "totalbalance">
+            <label>Total Balance: </label>
+            <label>$<?php echo $tbalance ?></label>
+        </div>
+        <div class="neonText" id="saleSign2">
+            SALE!!!
         </div>
 
 

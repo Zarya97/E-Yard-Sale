@@ -2,15 +2,19 @@ import mysql.connector
 
 mydb = mysql.connector.connect(
     host="localhost",
-     user="root"
+    user="root",
+    password = "Nashville2022@",
+    database = "yardsale"
        )
 
 mycursor = mydb.cursor()
 
-fetchData = "SELECT id from inventory"
+fetchData = "SELECT * from user"
 
 mycursor.execute(fetchData)
 
-answer = mycursor.fetchAll()
+answer = mycursor.fetchall()
 
-print(mydb)
+
+for x in answer:
+  print(x)

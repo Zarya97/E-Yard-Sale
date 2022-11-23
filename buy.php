@@ -53,8 +53,7 @@
                 }
             }
             else {
-                header("Location: noresults.html");
-                exit;
+                echo "<script>if(confirm('We are out of stock.\\nPlease check back soon!')){document.location.href='main.php'};</script>";
             }
                 
             ?>

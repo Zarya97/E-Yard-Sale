@@ -31,11 +31,14 @@
             $updateseller = "UPDATE user SET balance='$finalbalance' WHERE id = '$sellerid'";
             $result = $mysqli->query($updateseller);
 
-
+            header("Location: buy.html");
+            exit;
 
         }
-        header("Location: buy.html");
-        exit;
+        else {
+        echo "<script>if(confirm('Oops! It looks like you do not have enough credits\\nTotal Credit: $$tbalance')){document.location.href='buy.html'};</script>";
+        }
+        
         
     }
 ?>

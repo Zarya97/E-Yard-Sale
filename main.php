@@ -44,42 +44,44 @@ else {
         }
     </style>
 </head>
-<body class= "top">
-    
-    <h1>Home</h1>
-    
-    <?php if (isset($user)): ?>
+<div id ="wrapper">
+    <body class= "top">
         
-        <h3>Hello <?= htmlspecialchars($user["username"] ?? '') ?> ! </h3>
+        <h1>Home</h1>
         
-        <body>
-            <button onclick="window.location.href='logout.php';" style="background-color: dodgerblue;" id = "button">Log out</button>
-        </body>
-        <div id = "container">
-            <button onclick= "window.location.href='buy.html';" style="background-color:green;" class = "buy">Buy</button>
-            <button onclick= "window.location.href='sell.html';" style="background-color:red;" class = "sell">Sell</button>
-        </div>
-        <div id = "totalbalance">
-            <label>Total Balance: </label>
-            <label>$<?php echo $tbalance ?></label>
-        </div>
-        <div class="neonText" id="saleSign2">
-            SALE!!!
-        </div>
+        <?php if (isset($user)): ?>
+            
+            <h3>Hello <?= htmlspecialchars($user["username"] ?? '') ?> ! </h3>
+            
+            <body>
+                <button onclick="window.location.href='logout.php';" style="background-color: dodgerblue;" id = "button">Log out</button>
+            </body>
+            <div id = "container">
+                <button onclick= "window.location.href='buy.html';" style="background-color:green;" class = "buy">Buy</button>
+                <button onclick= "window.location.href='sell.html';" style="background-color:red;" class = "sell">Sell</button>
+            </div>
+            <div id = "totalbalance">
+                <label>Total Balance: </label>
+                <label>$<?php echo $tbalance ?></label>
+            </div>
+            <div class="neonText" id="saleSign2">
+                SALE!!!
+            </div>
 
 
-        
-    <?php else: ?>
-        <div>
+            
+        <?php else: ?>
             <div>
-                <button onclick= "window.location.href='login.php';" style="background-color:dodgerblue;" class = "button">Log in</button>
+                <div>
+                    <button onclick= "window.location.href='login.php';" style="background-color:dodgerblue;" class = "button">Log in</button>
+                </div>
+                <div>
+                    <button onclick= "window.location.href='sign-up.html';" style="background-color:dodgerblue;" class = "button">Sign up</button>
+                </div>
             </div>
-            <div>
-                <button onclick= "window.location.href='sign-up.html';" style="background-color:dodgerblue;" class = "button">Sign up</button>
-            </div>
-        </div>
+            
+        <?php endif; ?>
         
-    <?php endif; ?>
-    
-</body>
+    </body>
+</div>
 </html>

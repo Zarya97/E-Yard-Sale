@@ -2,20 +2,9 @@
 
     $mysqli = require __DIR__ . "/yardsaledb.php";
     session_start();
-    if(isset($_POST['sellsubmit'])) {
-        if (empty($_POST["title"])) {
-            die("Title is required");
-        }
-        if (empty($_POST["author"])) {
-            die("Author is required");
-        }
-        if (empty($_POST["isbn"])) {
-            die("ISBN is required");
-        }
-        if (empty($_POST["price"])) {
-            die("Price is required");
-        }
+    echo "hi";
 
+    if(!isset($_POST['update'])) {
         $id = $_SESSION["user_id"];
         
         $sql = "INSERT INTO inventory (sellerid, title, author, isbn, price)
@@ -25,7 +14,6 @@
 
 
         if ( ! $stmt->prepare($sql)) {
-            echo $id;
             die("SQL error: " . $mysqli->error);
         }
 
@@ -45,9 +33,6 @@
             header("Location: sell.html");
             exit;
         }
-
-        // If sign up not successful a message will be displayed
-        // that the email already exists in the database
         else {
             die($mysqli->error . " " . $mysqli->errno);
         }
@@ -64,5 +49,5 @@
         header("Location: listing.php");
         exit;
     }
-
+    exit;
 ?>

@@ -28,11 +28,11 @@
 
                 
             if (empty($_POST["search"])) {
-                $sql = "SELECT title,author,isbn,price FROM inventory";
+                $sql = "SELECT id,title,author,isbn,price FROM inventory WHERE sellerid != '$id'";
             }
             else {
-                $sql = "SELECT title,author,isbn,price FROM inventory
-                        WHERE isbn LIKE '%$search%' OR title LIKE '%$search%'";
+                $sql = "SELECT id,title,author,isbn,price FROM inventory
+                        WHERE isbn LIKE '%$search%' OR title LIKE '%$search%' AND sellerid != '$id'";
             }
 
             $result = $mysqli->query($sql);
@@ -59,5 +59,6 @@
                 
             ?>
         </table>
+        <button onclick="window.location.href='main.php';" style="background-color: dodgerblue;" id = "button">Home</button>
     </body>
 </html>

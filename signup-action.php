@@ -63,7 +63,7 @@ if ($stmt->execute()) {
 // that the email already exists in the database
 else {
 
-    if ($mysqli->errno === 1062) {
+    if ($mysqli->errno == 1062) {
         die("Email already taken");
     } 
     else {

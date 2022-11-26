@@ -3,22 +3,18 @@
 <head>
     <title>SELL</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <script src="/sell.js" defer></script>
+    <link rel="shortcut icon" type="image/png" href="Logo.png">
     <style type="text/css">
-        body {
-            background-image: url('Back.jpg');
-            background-size:cover;
-        }
     </style>
 </head>
 <body>
     <h1>SELL</h1>
-    <body>
         <button onclick="window.location.href='main.php';" style="background-color: dodgerblue;" id = "button">Home</button>
-    </body>
     <form action="sell.php" method="POST" id="sell" novalidate>
         <div>
             <label for="title">Title</label>
@@ -32,12 +28,12 @@
 
         <div>
             <label for="isbn">ISBN</label>
-            <input type="text" id="isbn" name="isbn">
+            <input type="text" id="isbn" name="isbn" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"/>
         </div>
 
         <div>
             <label for="price">Price</label>
-            <input type="text" id="price" name="price">
+            <input type="text" id="price" name="price" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
         </div>
         <div>
             <button type="submit" style="background-color:dodgerblue;" name="sellsubmit" >Submit</button>
@@ -47,9 +43,9 @@
         
     
     
-    <div class="neonText" id="saleSign">
+    <!--<div class="neonText" id="saleSign">
         SALE!!!
-    </div>
+    </div>-->
     
 </body>
 </html>

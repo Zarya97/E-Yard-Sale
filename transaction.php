@@ -8,14 +8,20 @@
         $balance = $mysqli->query($balance);
         $tbalance = $balance->fetch_array()[0] ?? '';
         
-        $stmt = "SELECT sellerid,price FROM inventory WHERE id = $itemid";
+        $stmt = "SELECT * FROM inventory WHERE id = $itemid";
         $result = $mysqli->query($stmt);
         $row = $result->fetch_assoc();
         $sellerid = $row['sellerid'];
         $price =  $row['price'];
+        $title = $row['title'];
+        $author = $row['author'];
+        $isbn = $row['isbn'];
         if ($tbalance > $price) {
-            $trans = "INSERT INTO transactions (buyer, seller, itemid, price) VALUES ($id,$sellerid,$itemid,$price)";
+            $trans = "INSERT INTO transactions (buyer, seller, itemid, price) VALUES ('$id','$sellerid','$itemid','$price')";
             $result = $mysqli->query($trans);
+
+            $order = "INSERT INTO purchased (buyerid, title, author, isbn, price) VALUES ('$id','$title','$author','$isbn','$price')";
+            $result = $mysqli->query($order);
 
             $deleteinv = "DELETE FROM inventory WHERE id = $itemid";
             $result = $mysqli->query($deleteinv);

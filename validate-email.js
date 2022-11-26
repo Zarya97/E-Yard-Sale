@@ -26,7 +26,7 @@ validation
                 const json = await response.json();
                 return json.available;
             },
-            errorMessage: "email already taken"
+            errorMessage: "Email already taken"
         }
     ])
     .addField("#password", [

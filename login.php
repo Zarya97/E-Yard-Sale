@@ -38,13 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="Logo.png">
     <style type="text/css">
-        body {
-            background-image: url('Back.jpg');
-            background-size:cover;
-        }
     </style>
 </head>
 <body>
@@ -52,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>Login</h1>
     
     <?php if ($is_invalid): ?>
-        <em>Incorrect username or password</em>
+        <em>Incorrect email or password</em>
     <?php endif; ?>
     
     <form method="post">

@@ -3,31 +3,32 @@
 <head>
     <title>BUY</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="Logo.png">
     <script src="/sell.js" defer></script>
     <style type="text/css">
-        body {
-            background-image: url('Back.jpg');
-            background-size:cover;
-        }
     </style>
 </head>
 <body>
     <h1>BUY</h1>
-    <body>
         <button onclick="window.location.href='main.php';" style="background-color: dodgerblue;" id = "button">Home</button>
-    </body>
     <form action="buy.php" method="post" id="buy">
-        <div>
+        <div class="search">
             <input type="text" id="search" name="search" placeholder="Search by Title or ISBN">
-            <button style="background-color:dodgerblue; margin-left: 300px; margin-top: 10px; width: 200px;">Search</button>
+            <button id="searchbutton" >Search</button>
         </div>
     </form>
-    <div class="neonText" id="saleSign">
+    <form action="purchases.php" method="post" id="purchases">
+        <div>
+            <button style="background-color:green; margin-top:10px; width: 200px;">Purchases</button>
+        </div>
+    </form>
+    <!--<div class="neonText" id="saleSign">
         SALE!!!
-    </div>
+    </div>-->
     
 </body>
 </html>

@@ -2,7 +2,6 @@
 
     $mysqli = require __DIR__ . "/yardsaledb.php";
     session_start();
-    echo "hi";
 
     if(!isset($_POST['update'])) {
         $id = $_SESSION["user_id"];
@@ -49,5 +48,4 @@
         header("Location: listing.php");
         exit;
     }
-    exit;
 ?>

@@ -35,16 +35,14 @@ else {
 <head>
     <title>Home</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="Logo.png">
     <style type="text/css">
-        body {
-            background-image: url('Back.jpg');
-            background-size:cover;
-        }
     </style>
 </head>
-<div id ="wrapper">
+<div>
     <body class= "top">
         
         <h1>Home</h1>
@@ -52,21 +50,23 @@ else {
         <?php if (isset($user)): ?>
             
             <h3>Hello <?= htmlspecialchars($user["username"] ?? '') ?> ! </h3>
+            <div class="neonText" id="saleSign2">
+                    SALE!!!
+            </div>
             
             <body>
                 <button onclick="window.location.href='logout.php';" style="background-color: dodgerblue;" id = "button">Log out</button>
             </body>
+            
             <div id = "container">
-                <button onclick= "window.location.href='buy.html';" style="background-color:green;" class = "buy">Buy</button>
+                <button onclick= "window.location.href='buy.html';" style="background-color:green;" class = "buy" >Buy</button>
                 <button onclick= "window.location.href='sell.html';" style="background-color:red;" class = "sell">Sell</button>
             </div>
             <div id = "totalbalance">
-                <label>Total Balance: </label>
-                <label>$<?php echo $tbalance ?></label>
+                <label style="color:black;">Total Balance: </label>
+                <label style="color:black;">$<?php echo $tbalance ?></label>
             </div>
-            <div class="neonText" id="saleSign2">
-                SALE!!!
-            </div>
+            
 
 
             

@@ -1,14 +1,15 @@
+<?php
+    session_start();
+?>
 <html>
     <body id="table">
         <title>Search</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/png" href="Logo.png">
         <style type="text/css">
-        body {
-            background-image: url('Back.jpg');
-            background-size:cover;
-        }
         </style>
         <table>
             <tr>
@@ -19,7 +20,6 @@
                 <th>Buy</th>
             </tr>
             <?php
-            session_start();
             $mysqli = require __DIR__ . "/yardsaledb.php";
             $id = $_SESSION["user_id"];
 
